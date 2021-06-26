@@ -6,17 +6,28 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cros": "^1.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
+  "scripts": {    
+    "start": "react-scripts start node backend/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "engines": {
+    "node": "10.16.0"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -34,5 +45,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:9000"
+  
 }
